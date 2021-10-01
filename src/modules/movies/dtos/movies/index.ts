@@ -1,0 +1,5 @@
+export {default as MoviesDTO} from './MoviesDTO'
+export {default as MoviesFiltersDTO} from './MoviesFiltersDTO'
+export {default as MoviesListDTO} from './MoviesListDTO'
+export {default as MoviesListParamsDTO} from './MoviesListParamsDTO'
+export {default as SearchMoviesParamsDTO} from './SearchMoviesParamsDTO'
