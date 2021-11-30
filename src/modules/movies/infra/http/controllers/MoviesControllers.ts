@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { ListMoviesService, ShowMoviesByNameService } from '@modules/movies/services';
+import { HomePageService, ListMoviesService, ShowMoviesByNameService } from '@modules/movies/services';
 
 type IndexRequest = Request & {
   query: {
@@ -17,6 +17,13 @@ type ShowRequest = Request & {
   };
 };
 class MoviesController {
+
+  public async html(req: IndexRequest, res: Response): Promise<Response> {
+    const homePageService = new HomePageService();
+    const data = await homePageService.run()
+    return res.json(data)
+  }
+
   public async index(req: IndexRequest, res: Response): Promise<Response> {
     const listMoviesService = new ListMoviesService();
     const data = await listMoviesService.run(req.query)
